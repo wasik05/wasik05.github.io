@@ -1,17 +1,14 @@
 /* Ustawienia ogólne */
 body {
     margin: 0;
+    padding: 0;
+    height: 100vh; /* Wysokość równa wysokości okna przeglądarki */
+    overflow: hidden; /* Zablokuj przewijanie */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     background-color: #121212;
     font-family: 'SF Pro Display', sans-serif;
-}
-
-/* Kontener centrowania */
-.container {
-    text-align: center;
 }
 
 /* Styl przycisku */
