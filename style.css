@@ -19,7 +19,7 @@ html, body {
     display: flex;
     align-items: center;
     padding: 0 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); */
     z-index: 10;
 }
 
@@ -70,8 +70,8 @@ html, body {
     justify-content: center;
     align-items: center;
 
-    width: 150px;
-    height: 100px;
+    width: 130px;
+    height: 80px;
 
     color: #fff;
     text-decoration: none;
@@ -94,7 +94,7 @@ html, body {
 
 /* Tekst górny - Instagram */
 .btn .top-text {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
     opacity: 0.8;
     margin-bottom: 5px;
