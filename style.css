@@ -83,6 +83,18 @@ body, html {
     box-shadow: 0 8px 25px rgba(255, 0, 100, 0.5);
 }
 
+.top-text {
+    font-size: 12px;
+    font-weight: 400;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+.main-text {
+    font-size: 20px;
+    font-weight: 700;
+}
+
 @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
