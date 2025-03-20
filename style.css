@@ -37,7 +37,8 @@ body {
 .header .name {
     font-size: 18px;
     font-weight: bold;
-    line-height: 50px; /* Wyrównanie tekstu do środka awatara */
+    display: flex;
+    align-items: center; /* Wyśrodkowanie tekstu w pionie */
 }
 
 /* Animacja ładowania */
@@ -108,10 +109,9 @@ body {
     text-decoration: none;
     color: #ffffff;
     background: #1A1A1A;
-    border: 2px solid;
-    border-image: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) 1;
-    border-radius: 30px;
-    transition: transform 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s, border-image 0.3s;
+    border: 2px solid #ffffff; /* Białe obramowanie */
+    border-radius: 30px; /* Zaokrąglone obramowanie */
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .btn:hover,
@@ -120,7 +120,7 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     background: #ffffff;
     color: #1A1A1A;
-    border-image: linear-gradient(45deg, #bc1888, #cc2366, #dc2743, #e6683c, #f09433) 1;
+    border-color: #ffffff; /* Zmiana koloru obramowania na biały */
 }
 
 .btn:active {
@@ -129,8 +129,8 @@ body {
 }
 
 .btn .top-text {
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 12px; /* Zmniejszenie rozmiaru czcionki */
+    font-weight: normal; /* Usunięcie pogrubienia */
     background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
