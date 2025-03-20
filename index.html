@@ -39,10 +39,12 @@
 
     <script>
         // Ukrycie ekranu ładowania po 2 sekundach
-        setTimeout(() => {
-            document.querySelector('.loading-screen').classList.add('fade-out');
-            document.querySelector('.container').classList.add('fade-in');
-        }, 2000);
+setTimeout(() => {
+    document.querySelector('.loading-screen').classList.add('fade-out');
+    document.querySelector('.container').classList.add('fade-in');
+    document.querySelector('.header').classList.remove('hidden'); // Usunięcie klasy hidden
+    document.querySelector('.header').classList.add('fade-in'); // Dodanie klasy fade-in
+}, 2000);
     </script>
 </body>
 </html>
