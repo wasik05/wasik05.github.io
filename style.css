@@ -14,6 +14,7 @@ body {
     min-height: 100vh;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 /* Górna belka */
@@ -87,6 +88,13 @@ body {
     display: flex;
     gap: 20px;
     opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out, visibility 0s linear 1s;
+}
+
+.container.fade-in {
+    opacity: 1;
+    visibility: visible;
     transition: opacity 1s ease-in-out;
 }
 
