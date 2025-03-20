@@ -29,11 +29,11 @@ body {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    margin-right: 15px;
+    margin-right: 10px;
 }
 
 .header .name {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -48,11 +48,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.loading-screen.fade-out {
+    animation: fadeOut 1s ease-in-out;
+    animation-fill-mode: forwards;
 }
 
 .loader {
-    border: 8px solid #f3f3f3;
-    border-top: 8px solid #3498db;
+    border: 8px solid #333;
+    border-top: 8px solid #f09433;
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -62,6 +68,16 @@ body {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 /* Kontener główny */
@@ -85,7 +101,7 @@ body {
     border: 2px solid;
     border-image: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) 1;
     border-radius: 30px;
-    transition: transform 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s, border-image 0.3s;
 }
 
 .btn:hover {
@@ -93,6 +109,12 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     background: #ffffff;
     color: #1A1A1A;
+    border-image: linear-gradient(45deg, #bc1888, #cc2366, #dc2743, #e6683c, #f09433) 1;
+}
+
+.btn:active {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .btn .top-text {
