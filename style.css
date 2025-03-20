@@ -59,18 +59,22 @@ body, html {
 
 .buttons {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: row; /* zmiana z column na row */
+    justify-content: center;
+    gap: 20px; /* odstęp między przyciskami */
+    flex-wrap: wrap; /* dla mniejszych ekranów */
 }
 
 .btn {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-decoration: none;
     color: white;
-    width: 250px;
-    padding: 15px 20px;
+    width: 140px; /* mniejsza szerokość przycisku */
+    height: 80px;  /* wysokość przycisku */
+    padding: 10px 15px;
     background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
     border-radius: 12px;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -82,13 +86,13 @@ body, html {
 }
 
 .top-text {
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 400;
     opacity: 0.8;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 
 .main-text {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
 }
