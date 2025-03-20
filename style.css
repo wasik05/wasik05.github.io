@@ -1,146 +1,90 @@
-/* Font Face */
-@font-face {
-    font-family: 'SF Pro Display';
-    src: url('fonts/sf-pro-display-regular.woff2') format('woff2');
-    font-weight: 400;
-}
-@font-face {
-    font-family: 'SF Pro Display';
-    src: url('fonts/sf-pro-display-bold.woff2') format('woff2');
-    font-weight: 700;
-}
-
-/* Reset i ogólne */
+/* Resetowanie marginesów */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     font-family: 'SF Pro Display', sans-serif;
-    background-color: #121212;
-    color: #fff;
-    overflow: hidden;
+    background-color: #0d0d0d;
 }
 
-/* Tło z animacją / bez */
-.overlay {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: rgba(18, 18, 18, 0.9);
-    z-index: 1;
-}
-
+/* Kontener główny */
 .container {
     position: relative;
     z-index: 2;
-    height: calc(100% - 55px)
+    height: 100vh; /* Pełna wysokość widoku */
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Wyśrodkowanie pionowe */
+    align-items: center;     /* Wyśrodkowanie poziome */
     opacity: 0;
     animation: fadeIn 3s forwards;
 }
 
+/* Animacja fadeIn */
 @keyframes fadeIn {
+    from { opacity: 0; }
     to { opacity: 1; }
 }
 
-.logo {
-    width: 150px;
-    margin-bottom: 40px;
-    animation: logoPop 2s ease-out forwards;
-}
-
-@keyframes logoPop {
-    0% { transform: scale(0.8); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
-}
-
-.buttons {
-    text-align: center;
-    margin-top: 50px;
-}
-
+/* Przyciski */
 .btn {
     display: flex;
-    flex-direction: column; /* <-- To dodajemy */
-    align-items: center; /* Wyśrodkowanie w pionie */
+    flex-direction: column;  /* Teksty jeden pod drugim */
+    justify-content: center;
+    align-items: center;
+    
     margin: 10px;
-    padding: 15px 30px;
-    font-family: 'SF Pro Display', sans-serif;
+    padding: 20px 40px;
+
     color: #fff;
     text-decoration: none;
+
     border-radius: 15px;
+
     background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
     background-size: 300% 300%;
+
     transition: all 0.4s ease-in-out;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
+/* Efekt hover */
 .btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 25px rgba(255, 0, 100, 0.5);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-.top-text {
-    font-size: 12px;
+/* Tekst górny - Instagram */
+.btn .top-text {
+    font-size: 14px;
     font-weight: 400;
     opacity: 0.8;
     margin-bottom: 5px;
 }
 
-.main-text {
+/* Tekst dolny - Osobisty/Roboczy */
+.btn .main-text {
     font-size: 20px;
     font-weight: 700;
 }
 
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-
-.top-bar {
+/* Pasek górny (jeśli masz nagłówek lub menu) */
+.header {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
-    height: 70px;
-    background-color: #1A1A1A; /* szara belka */
+    height: 60px;
+    background-color: #1a1a1a;
+    color: white;
     display: flex;
     align-items: center;
-    padding: 0 20px;
-    z-index: 999;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    animation: logoPop 2s ease-out forwards;
+    padding-left: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    z-index: 5;
 }
 
-.logo-wrapper {
-    display: flex;
-    align-items: center;
-}
-
-.logo-circle {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 15px;
-    animation: logoPop 2s ease-out forwards;
-}
-
-.logo-text {
-    font-weight: 700;
-    font-size: 20px;
-    color: #fff;
-    font-family: 'SF Pro Display', sans-serif;
-    animation: logoPop 2s ease-out forwards;
-}
-
-.container {
-    margin-top: 55px; /* wysokość belki */
-    animation: logoPop 2s ease-out forwards;
+/* Styl linku */
+a {
+    color: inherit;
 }
