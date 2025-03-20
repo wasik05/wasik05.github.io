@@ -63,11 +63,10 @@ body, html {
 }
 
 .btn {
-    display: inline-block;
+    display: flex;
     margin: 10px;
     padding: 15px 30px;
     font-family: 'SF Pro Display', sans-serif;
-    font-size: 20px;
     color: #fff;
     text-decoration: none;
     border-radius: 15px;
@@ -75,7 +74,7 @@ body, html {
     background-size: 300% 300%;
     transition: all 0.4s ease-in-out;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    animation: gradientAnimation 5s ease infinite;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .btn:hover {
