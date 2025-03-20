@@ -52,7 +52,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px; /* Odstęp między przyciskami */
+    gap: 15px; /* Odstęp między przyciskami */
     opacity: 0;
     animation: fadeIn 3s forwards;
 }
@@ -77,9 +77,9 @@ html, body {
     text-decoration: none;
 
     border-radius: 15px;
-    border-style: solid;
+    /* border-style: solid;
     border-color: #DD2A7B;
-    border-width: 0.15em;
+    border-width: 0.15em; */
     background: #fff;
     background-size: 300% 300%;
 
