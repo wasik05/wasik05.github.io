@@ -21,26 +21,37 @@ body {
 /* Górna belka */
 .header {
     position: fixed;
-    top: 20px;
-    left: 20px;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background-color: linear-gradient(0,25turn, #1A1A1A, #0d0d0d);
     display: flex;
     align-items: center;
-    z-index: 1000;
+    padding: 0 20px;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); */
+    z-index: 10;
 }
 
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+/* Avatar w kółku */
 .header .avatar {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+    object-fit: cover;
     margin-right: 10px;
 }
 
+/* Imię */
 .header .name {
     font-size: 18px;
     font-weight: bold;
-    display: flex;
-    align-items: center; /* Wyśrodkowanie tekstu w pionie */
 }
+
 
 /* Animacja ładowania */
 .loading-screen {
