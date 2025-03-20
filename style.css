@@ -33,7 +33,7 @@ body, html {
 .container {
     position: relative;
     z-index: 2;
-    height: 100%;
+    height: calc(100% - 55px)
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -107,12 +107,13 @@ body, html {
     left: 0;
     width: 100%;
     height: 70px;
-    background-color: #333; /* szara belka */
+    background-color: #1A1A1A; /* szara belka */
     display: flex;
     align-items: center;
     padding: 0 20px;
     z-index: 999;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    animation: logoPop 2s ease-out forwards;
 }
 
 .logo-wrapper {
@@ -121,12 +122,12 @@ body, html {
 }
 
 .logo-circle {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     object-fit: cover;
     margin-right: 15px;
-    animation: none; /* wyłącz animację logoPop */
+    animation: logoPop 2s ease-out forwards;
 }
 
 .logo-text {
@@ -134,8 +135,10 @@ body, html {
     font-size: 20px;
     color: #fff;
     font-family: 'SF Pro Display', sans-serif;
+    animation: logoPop 2s ease-out forwards;
 }
 
 .container {
-    margin-top: 70px; /* wysokość belki */
+    margin-top: 55px; /* wysokość belki */
+    animation: logoPop 2s ease-out forwards;
 }
