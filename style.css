@@ -58,41 +58,33 @@ body, html {
 }
 
 .buttons {
-    display: flex;
-    flex-direction: row; /* zmiana z column na row */
-    justify-content: center;
-    gap: 20px; /* odstęp między przyciskami */
-    flex-wrap: wrap; /* dla mniejszych ekranów */
+    text-align: center;
+    margin-top: 50px;
 }
 
 .btn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 30px;
+    font-family: 'SF Pro Display', sans-serif;
+    font-size: 20px;
+    color: #fff;
     text-decoration: none;
-    color: white;
-    width: 140px; /* mniejsza szerokość przycisku */
-    height: 80px;  /* wysokość przycisku */
-    padding: 10px 15px;
+    border-radius: 15px;
     background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    border-radius: 12px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    background-size: 300% 300%;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: gradientAnimation 5s ease infinite;
 }
 
 .btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(255, 0, 100, 0.5);
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 0, 100, 0.5);
 }
 
-.top-text {
-    font-size: 10px;
-    font-weight: 400;
-    opacity: 0.8;
-    margin-bottom: 3px;
-}
-
-.main-text {
-    font-size: 16px;
-    font-weight: 700;
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
