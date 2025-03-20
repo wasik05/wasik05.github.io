@@ -87,8 +87,8 @@ body {
 }
 
 .loader {
-    border: 8px solid #333;
-    border-top: 8px solid #f09433;
+    border: 8px solid #00FFFFFF;
+    border-top: 8px solid #fff;
     border-radius: 50%;
     width: 60px;
     height: 60px;
