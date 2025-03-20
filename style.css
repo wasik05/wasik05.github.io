@@ -46,6 +46,11 @@ body {
     visibility: hidden;
 }
 
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
 /* Avatar w kółku */
 .header .avatar {
     width: 40px;
