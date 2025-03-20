@@ -15,6 +15,7 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    user-select: none; /* Wyłączenie zaznaczania tekstu */
 }
 
 /* Górna belka */
