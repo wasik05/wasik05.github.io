@@ -1,10 +1,41 @@
-/* Resetowanie marginesów */
+/* Resetowanie marginesów i podstawowe style */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     font-family: 'SF Pro Display', sans-serif;
     background-color: #0d0d0d;
+    color: #fff;
+}
+
+/* Górna belka */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.header .icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.header .name {
+    font-size: 18px;
+    font-weight: bold;
 }
 
 /* Kontener główny */
@@ -13,9 +44,10 @@ body, html {
     z-index: 2;
     height: 100vh; /* Pełna wysokość widoku */
     display: flex;
-    flex-direction: column;
-    justify-content: center; /* Wyśrodkowanie pionowe */
-    align-items: center;     /* Wyśrodkowanie poziome */
+    justify-content: center; /* Wyśrodkowanie poziome */
+    align-items: center;     /* Wyśrodkowanie pionowe */
+    gap: 20px; /* Odstęp między przyciskami */
+    padding-top: 60px; /* Uniknięcie zakrycia przez header */
     opacity: 0;
     animation: fadeIn 3s forwards;
 }
@@ -32,9 +64,9 @@ body, html {
     flex-direction: column;  /* Teksty jeden pod drugim */
     justify-content: center;
     align-items: center;
-    
-    margin: 10px;
-    padding: 20px 40px;
+
+    width: 150px;
+    height: 100px;
 
     color: #fff;
     text-decoration: none;
@@ -65,26 +97,11 @@ body, html {
 
 /* Tekst dolny - Osobisty/Roboczy */
 .btn .main-text {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
 }
 
-/* Pasek górny (jeśli masz nagłówek lub menu) */
-.header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 60px;
-    background-color: #1a1a1a;
-    color: white;
-    display: flex;
-    align-items: center;
-    padding-left: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-    z-index: 5;
-}
-
-/* Styl linku */
+/* Dla linków */
 a {
     color: inherit;
 }
