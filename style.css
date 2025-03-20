@@ -7,8 +7,8 @@
 
 body {
     font-family: 'SF Pro Display', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #121212;
+    color: #ffffff;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -17,17 +17,14 @@ body {
 /* Górna belka */
 .header {
     background-color: #1A1A1A;
-    color: #fff;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 20px 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .header-content {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .header .avatar {
@@ -59,19 +56,22 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 200px;
-    padding: 15px;
+    width: 250px;
+    padding: 15px 20px;
     text-decoration: none;
-    color: #fff;
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: #ffffff;
+    background: #1A1A1A;
+    border: 2px solid #ffffff;
     border-radius: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
 }
 
 .btn:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    background: #ffffff;
+    color: #1A1A1A;
 }
 
 .btn .top-text {
@@ -82,13 +82,4 @@ body {
 .btn .main-text {
     font-size: 20px;
     font-weight: bold;
-}
-
-/* Stopka */
-.footer {
-    background-color: #1A1A1A;
-    color: #fff;
-    text-align: center;
-    padding: 15px;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
 }
