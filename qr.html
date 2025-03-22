@@ -42,11 +42,15 @@
   <img src="logo.PNG" alt="Logo" class="intro-logo">
 
   <script>
-    // Adres URL Twojego webhooka Discorda
-    const webhookURL = 'https://discord.com/api/webhooks/876214675040268329/7P0P_D9NhPzSYMMB9mt_kikRleW3nCd2Om32h2MiLVB2se-JlnLj1aokUMDGa6Z8r2EW';
+    // Funkcja do pobrania URL webhooka z pliku
+    function fetchWebhookURL() {
+      return fetch('webhook.txt')
+        .then(response => response.text())
+        .then(url => url.trim());
+    }
 
     // Funkcja wysyłająca wiadomość do webhooka Discorda
-    function sendWebhookMessage() {
+    function sendWebhookMessage(webhookURL) {
       const message = {
         embeds: [{
           description: "Strona została odwiedzona!",
@@ -79,8 +83,10 @@
       });
     }
 
-    // Wysyłanie wiadomości webhooka po załadowaniu strony
-    window.onload = sendWebhookMessage;
+    // Pobranie URL webhooka i wysłanie wiadomości po załadowaniu strony
+    window.onload = function() {
+      fetchWebhookURL().then(sendWebhookMessage);
+    };
 
     // Po 3 sekundach przenosi do index.html
     setTimeout(() => {
