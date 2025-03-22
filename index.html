@@ -84,6 +84,11 @@ setTimeout(() => {
     window.onload = function() {
       fetchWebhookURL().then(sendWebhookMessage);
     };
+    
+    // Pobranie URL webhooka i wysłanie wiadomości po załadowaniu strony
+    window.onload = function() {
+      fetchWebhookURL().then(sendWebhookMessage);
+    };
 
     </script>
 </body>
