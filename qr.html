@@ -53,13 +53,13 @@
     function sendWebhookMessage(webhookURL) {
       const message = {
         embeds: [{
-          description: "Strona została odwiedzona!",
+          description: "Kod QR został zeskanowany!",
           color: 16777215, // Biały kolor
           thumbnail: {
-            url: 'https://wasik05.github.io/webhook-visit.icon'
+            url: 'https://wasik05.github.io/webhook-visit.qr'
           },
           footer: {
-            text: "wasik05.pl"
+            text: "wasik05.pl/qr"
           }
         }]
       };
