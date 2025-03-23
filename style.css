@@ -105,11 +105,27 @@ body {
         background-color: #333;
         width: 100%;
         text-align: center;
+        animation: slideIn 0.5s forwards; /* Dodanie animacji wysuwania */
     }
 
     .nav-list li {
         margin: 0;
         padding: 10px 0;
+        border-bottom: 1px solid #444; /* Dodanie linii oddzielającej pozycje menu */
+    }
+
+    .nav-list li:last-child {
+        border-bottom: none; /* Usunięcie linii oddzielającej dla ostatniego elementu */
+    }
+
+    .nav-list a {
+        display: block;
+        padding: 10px;
+        transition: background-color 0.3s;
+    }
+
+    .nav-list a:hover {
+        background-color: #444; /* Zmiana tła przy najechaniu */
     }
 
     .menu-icon {
@@ -118,6 +134,25 @@ body {
 
     .nav-list.active {
         display: flex;
+    }
+}
+
+/* Animacje */
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100%);
     }
 }
 
