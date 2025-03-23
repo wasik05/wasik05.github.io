@@ -108,19 +108,21 @@ body {
         text-align: center;
         z-index: 9; /* Menu pod górnym paskiem */
         overflow: hidden; /* Ukryj elementy wychodzące poza obszar */
-        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Dodanie animacji wysuwania i chowania */
+        opacity: 0; /* Początkowo ukryte */
+        transform: translateY(-100%); /* Początkowa pozycja nad ekranem */
+        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Animacja pojawiania się i chowania */
     }
 
     .nav-list.active {
         display: flex;
         transform: translateY(0); /* Menu wysuwane spod górnego paska */
-        opacity: 1; /* Widoczne menu */
+        opacity: 1; /* Pokazanie menu */
     }
 
     .nav-list.inactive {
         display: flex;
         transform: translateY(-100%); /* Menu chowane nad ekranem */
-        opacity: 0; /* Ukryte menu */
+        opacity: 0; /* Ukrycie menu */
     }
 
     .nav-list li {
