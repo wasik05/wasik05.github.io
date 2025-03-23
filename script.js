@@ -59,7 +59,9 @@ function toggleMenu() {
         navList.classList.remove('active');
         navList.classList.add('inactive');
         navList.addEventListener('animationend', () => {
-            navList.style.display = 'none';
+            if (navList.classList.contains('inactive')) {
+                navList.style.display = 'none';
+            }
         }, { once: true });
     } else {
         navList.style.display = 'flex';
