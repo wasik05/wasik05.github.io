@@ -95,6 +95,7 @@ body {
     cursor: pointer;
 }
 
+/* Styl dla urządzeń mobilnych (ekrany wąskie) */
 @media (max-width: 768px) {
     .nav-list {
         display: none;
@@ -160,6 +161,17 @@ body {
 
     .menu-icon {
         display: block;
+    }
+}
+
+/* Styl dla komputerów (ekrany szerokie) */
+@media (min-width: 768px) {
+    .nav-list {
+        display: flex;
+        flex-direction: row;
+    }
+    .menu-icon {
+        display: none;
     }
 }
 
