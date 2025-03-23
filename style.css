@@ -114,6 +114,11 @@ body {
         transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.5s ease-in-out; /* Animacja pojawiania się i chowania */
     }
 
+    .nav-list.active,
+    .nav-list.inactive {
+        pointer-events: none; /* Wyłączanie wskaźników podczas animacji */
+    }
+
     .nav-list.active {
         display: flex;
         transform: translateY(0); /* Menu wysuwane spod górnego paska */
@@ -126,6 +131,11 @@ body {
         transform: translateY(-100%); /* Menu chowane nad ekranem */
         opacity: 0; /* Ukrycie menu */
         filter: blur(10px); /* Dodanie rozmycia */
+    }
+
+    .nav-list.active.finished,
+    .nav-list.inactive.finished {
+        pointer-events: auto; /* Włączenie wskaźników po zakończeniu animacji */
     }
 
     .nav-list li {
