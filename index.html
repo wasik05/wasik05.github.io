@@ -1,228 +1,59 @@
-/* Reset i podstawowe style */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paweł Wąsik</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="avatar.png">
+    <meta content="Official Page." property="og:description">
+    <meta content="Paweł Wąsik" property="og:title">
+    <meta content="https://wasik05.pl/avatar.png" property="og:image">
+    <meta content="#ffffff" data-react-helmet="true" name="theme-color">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-body {
-    font-family: 'SF Pro Display', sans-serif;
-    background-color: #121212;
-    color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    user-select: none; /* Wyłączenie zaznaczania tekstu */
-}
+      gtag('config', 'YOUR_TRACKING_ID');
+    </script>
+</head>
+<body>
+    <!-- Górna belka -->
+    <header class="header hidden">
+        <div class="header-content">
+            <img src="avatar.png" alt="Avatar" class="avatar">
+            <span class="name">Paweł Wąsik</span>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="strona1.html">Strona1</a></li>
+                    <li><a href="strona2.html">Strona2</a></li>
+                    <li><a href="strona3.html">Strona3</a></li>
+                </ul>
+                <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+            </nav>
+        </div>
+    </header>
 
-/* Górna belka */
-.header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 60px;
-    background-color: #121212; /* Taki sam kolor jak tło strony */
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    z-index: 10;
-    opacity: 0; /* Ukrycie elementu początkowo */
-    visibility: hidden; /* Ukrycie elementu początkowo */
-    transition: opacity 1s ease-in-out, visibility 0s linear 1s; /* Efekt pojawiania się */
-}
+    <!-- Animacja ładowania -->
+    <div class="loading-screen">
+        <div class="loader"></div>
+    </div>
 
-.header.fade-in {
-    opacity: 1;
-    visibility: visible; /* Widoczność elementu po animacji */
-    transition: opacity 1s ease-in-out;
-}
+    <!-- Kontener główny z przyciskami -->
+    <main class="container">
+        <a class="btn" href="https://instagram.com/_wasik.05">
+            <span class="top-text">Instagram</span>
+            <span class="main-text">Osobisty</span>
+        </a>
+        <a class="btn" href="https://instagram.com/_wasik.05">
+            <span class="top-text">Instagram</span>
+            <span class="main-text">Roboczy</span>
+        </a>
+    </main>
 
-/* Ukrywanie elementu */
-.hidden {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Rozmieść elementy po lewej i prawej */
-    width: 100%;
-}
-
-/* Avatar w kółku */
-.header .avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 10px;
-}
-
-/* Imię */
-.header .name {
-    font-size: 18px;
-    font-weight: bold;
-    margin-right: auto; /* Przesunięcie napisu na lewą stronę */
-}
-
-/* Menu nawigacyjne */
-.nav-list {
-    list-style: none;
-    display: flex;
-}
-
-.nav-list li {
-    margin-left: 20px;
-}
-
-.nav-list a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.menu-icon {
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    .nav-list {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #333;
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-list li {
-        margin: 0;
-        padding: 10px 0;
-    }
-
-    .menu-icon {
-        display: block;
-    }
-
-    .nav-list.active {
-        display: flex;
-    }
-}
-
-/* Animacja ładowania */
-.loading-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #121212;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: fadeIn 1s ease-in-out;
-}
-
-.loading-screen.fade-out {
-    animation: fadeOut 1s ease-in-out;
-    animation-fill-mode: forwards;
-}
-
-.loader {
-    border: 8px solid #121212;
-    border-top: 8px solid #fff;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-@keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
-}
-
-/* Kontener główny */
-.container {
-    display: flex;
-    gap: 20px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 1s ease-in-out, visibility 0s linear 1s;
-    z-index: 10; /* Przenieś na wierzch */
-}
-
-.container.fade-in {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 1s ease-in-out;
-}
-
-/* Przyciski */
-.btn {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: #ffffff;
-    background: #1A1A1A;
-    border: 2px solid #ffffff; /* Białe obramowanie */
-    border-radius: 20px; /* Zaokrąglone obramowanie */
-    transition: transform 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s, border-color 0.3s;
-    position: relative;
-    z-index: 1; /* Przenieś na wierzch */
-}
-
-.btn:hover,
-.btn:focus {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    background: #ffffff;
-    color: #1A1A1A;
-    border-color: #ffffff; /* Zmiana koloru obramowania na biały */
-}
-
-.btn:active {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.btn .top-text {
-    font-size: 12px; /* Zmniejszenie rozmiaru czcionki */
-    font-weight: normal; /* Usunięcie pogrubienia */
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradient 3s infinite;
-}
-
-.btn .main-text {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-@keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+    <script src="script.js"></script>
+</body>
+</html>
