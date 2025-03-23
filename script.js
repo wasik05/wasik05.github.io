@@ -61,11 +61,13 @@ function toggleMenu() {
         navList.addEventListener('transitionend', () => {
             if (navList.classList.contains('inactive')) {
                 navList.style.display = 'none';
+                navList.classList.remove('inactive'); // Usunięcie klasy inactive po zakończeniu animacji
             }
         }, { once: true });
     } else {
         navList.style.display = 'flex';
-        navList.classList.remove('inactive');
-        navList.classList.add('active');
+        setTimeout(() => {
+            navList.classList.add('active');
+        }, 10); // Dodanie małego opóźnienia, aby zapewnić, że display: flex zostanie zastosowane przed rozpoczęciem animacji
     }
 }
