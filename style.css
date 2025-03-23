@@ -70,6 +70,10 @@ body {
 }
 
 /* Menu nawigacyjne */
+.nav {
+    margin-top: 10px; /* Dodanie marginesu górnego, aby wyrównać menu */
+}
+
 .nav-list {
     list-style: none;
     display: flex;
