@@ -73,4 +73,6 @@ function toggleMenu() {
             navList.addEventListener('transitionend', () => {
                 navList.classList.add('finished'); // Dodanie klasy finished po zakończeniu animacji
             }, { once: true });
-        },
+        }, 0);
+    }
+}
