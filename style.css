@@ -110,19 +110,22 @@ body {
         overflow: hidden; /* Ukryj elementy wychodzące poza obszar */
         opacity: 0; /* Początkowo ukryte */
         transform: translateY(-100%); /* Początkowa pozycja nad ekranem */
-        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Animacja pojawiania się i chowania */
+        filter: blur(10px); /* Początkowe rozmycie */
+        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, filter 0.5s ease-in-out; /* Animacja pojawiania się i chowania */
     }
 
     .nav-list.active {
         display: flex;
         transform: translateY(0); /* Menu wysuwane spod górnego paska */
         opacity: 1; /* Pokazanie menu */
+        filter: blur(0); /* Usunięcie rozmycia */
     }
 
     .nav-list.inactive {
         display: flex;
         transform: translateY(-100%); /* Menu chowane nad ekranem */
         opacity: 0; /* Ukrycie menu */
+        filter: blur(10px); /* Dodanie rozmycia */
     }
 
     .nav-list li {
