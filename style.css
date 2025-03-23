@@ -148,7 +148,7 @@ body {
 /* Animacje */
 @keyframes slideIn {
     from {
-        transform: translateY(60px); /* Wysuwanie menu spod górnego paska */
+        transform: translateY(-100%); /* Wysuwanie menu spod górnego paska */
     }
     to {
         transform: translateY(0);
@@ -160,7 +160,7 @@ body {
         transform: translateY(0);
     }
     to {
-        transform: translateY(60px); /* Chowanie menu pod górny pasek */
+        transform: translateY(-100%); /* Chowanie menu pod górny pasek */
     }
 }
 
