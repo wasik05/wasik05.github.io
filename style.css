@@ -107,6 +107,7 @@ body {
         width: 100%; /* Szerokość menu */
         text-align: center;
         z-index: 9; /* Menu pod górnym paskiem */
+        overflow: hidden; /* Ukryj elementy wychodzące poza obszar */
     }
 
     .nav-list li {
@@ -147,7 +148,7 @@ body {
 /* Animacje */
 @keyframes slideIn {
     from {
-        transform: translateY(-100%);
+        transform: translateY(60px); /* Wysuwanie menu spod górnego paska */
     }
     to {
         transform: translateY(0);
@@ -159,7 +160,7 @@ body {
         transform: translateY(0);
     }
     to {
-        transform: translateY(-100%);
+        transform: translateY(60px); /* Chowanie menu pod górny pasek */
     }
 }
 
