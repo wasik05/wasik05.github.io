@@ -100,7 +100,7 @@ body {
         display: none;
         flex-direction: column;
         position: fixed;
-        top: 0; /* Wysuwanie menu spod górnego paska */
+        top: 60px; /* Wysuwanie menu spod górnego paska */
         left: 0;
         right: 0;
         background-color: #2d2d2d; /* Ciemniejszy odcień szarości */
@@ -113,7 +113,7 @@ body {
     }
 
     .nav-list.active {
-        transform: translateY(60px); /* Menu wysuwane spod górnego paska */
+        transform: translateY(0); /* Menu wysuwane spod górnego paska */
     }
 
     .nav-list.inactive {
