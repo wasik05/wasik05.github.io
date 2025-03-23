@@ -58,7 +58,7 @@ function toggleMenu() {
     if (navList.classList.contains('active')) {
         navList.classList.remove('active');
         navList.classList.add('inactive');
-        navList.addEventListener('animationend', () => {
+        navList.addEventListener('transitionend', () => {
             if (navList.classList.contains('inactive')) {
                 navList.style.display = 'none';
             }
