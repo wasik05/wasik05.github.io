@@ -51,3 +51,9 @@ function sendWebhookMessage(webhookURL) {
 window.onload = function() {
     fetchWebhookURL().then(sendWebhookMessage);
 };
+
+// Funkcja do przełączania menu
+function toggleMenu() {
+    const navList = document.querySelector('.nav-list');
+    navList.classList.toggle('active');
+}
