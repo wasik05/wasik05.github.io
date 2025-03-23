@@ -114,6 +114,8 @@ body {
 .nav-list a {
     display: block;
     padding: 10px;
+    color: white; /* Ustawienie koloru tekstu na biały */
+    text-decoration: none; /* Usunięcie podkreślenia */
     transition: background-color 0.3s;
 }
 
