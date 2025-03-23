@@ -113,10 +113,12 @@ body {
     }
 
     .nav-list.active {
-        transform: translateY(0); /* Menu wysuwane spod górnego paska */
+        display: flex;
+        transform: translateY(60px); /* Menu wysuwane spod górnego paska */
     }
 
     .nav-list.inactive {
+        display: flex;
         transform: translateY(-100%); /* Menu chowane nad ekranem */
     }
 
