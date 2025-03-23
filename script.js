@@ -56,4 +56,10 @@ window.onload = function() {
 function toggleMenu() {
     const navList = document.querySelector('.nav-list');
     navList.classList.toggle('active');
+
+    if (navList.classList.contains('active')) {
+        navList.style.animation = 'slideIn 0.5s forwards';
+    } else {
+        navList.style.animation = 'slideOut 0.5s forwards';
+    }
 }
