@@ -100,10 +100,11 @@ body {
         display: none;
         flex-direction: column;
         position: fixed;
-        top: 60px; /* Wysuwanie menu spod górnego paska */
+        top: 60px;
+        left: 0;
         right: 0;
         background-color: #2d2d2d; /* Ciemniejszy odcień szarości */
-        width: 80%; /* Mniejsza szerokość menu */
+        width: 100%; /* Szerokość menu */
         text-align: center;
         z-index: 9; /* Menu pod górnym paskiem */
     }
