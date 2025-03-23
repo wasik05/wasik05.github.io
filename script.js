@@ -55,6 +55,7 @@ window.onload = function() {
 // Funkcja do przełączania menu
 function toggleMenu() {
     const navList = document.querySelector('.nav-list');
+    navList.classList.remove('finished'); // Usunięcie klasy finished na początku animacji
     if (navList.classList.contains('active')) {
         navList.classList.remove('active');
         navList.classList.add('inactive');
@@ -62,12 +63,14 @@ function toggleMenu() {
             if (navList.classList.contains('inactive')) {
                 navList.style.display = 'none';
                 navList.classList.remove('inactive'); // Usunięcie klasy inactive po zakończeniu animacji
+                navList.classList.add('finished'); // Dodanie klasy finished po zakończeniu animacji
             }
         }, { once: true });
     } else {
         navList.style.display = 'flex';
         setTimeout(() => {
             navList.classList.add('active');
-        }, 10); // Dodanie małego opóźnienia, aby zapewnić, że display: flex zostanie zastosowane przed rozpoczęciem animacji
-    }
-}
+            navList.addEventListener('transitionend', () => {
+                navList.classList.add('finished'); // Dodanie klasy finished po zakończeniu animacji
+            }, { once: true });
+        },
