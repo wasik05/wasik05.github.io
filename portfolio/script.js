@@ -83,9 +83,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Lista grafik do zaimportowania
     const images = [
-        { src: 'images/001.PNG', alt: 'Graphic 1', description: 'Opis grafiki 1' },
-        { src: 'images/002.PNG', alt: 'Graphic 2', description: 'Opis grafiki 2' },
-        { src: 'images/003.PNG', alt: 'Graphic 3', description: 'Opis grafiki 3' }
+        { src: 'images/001.PNG', alt: 'Graphic 1' },
+        { src: 'images/002.PNG', alt: 'Graphic 2' },
+        { src: 'images/003.PNG', alt: 'Graphic 3' }
     ];
 
     // Generowanie elementów galerii
