@@ -1,8 +1,0 @@
-title: "Portfolio - Paweł Wąsik"
-description: "Portfolio Page"
-baseurl: "/portfolio"
-url: "https://wasik05.github.io"
-markdown: kramdown
-theme: minima
-sass:
-  style: compressed
