@@ -1,4 +1,21 @@
+/* Wczytywanie dedykowanego fontu */
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('../fonts/SF-Pro-Display-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Stylizacja wspólna z główną stroną */
+body {
+    font-family: 'SF Pro Display', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
 .header {
     background-color: #333;
     color: #fff;
@@ -35,12 +52,26 @@
     text-decoration: none;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 20px;
+.nav-list a:hover {
+    color: #ff6347;
 }
 
+.container {
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 2rem;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 1rem;
+}
+
+/* Stylizacja specyficzna dla portfolio */
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -62,7 +93,6 @@
     margin-top: 10px;
 }
 
-/* Stylizacja specyficzna dla portfolio */
 h1 {
     text-align: center;
     margin-bottom: 40px;
