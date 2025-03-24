@@ -243,58 +243,11 @@ body {
     transition: opacity 1s ease-in-out;
 }
 
-/* Przyciski */
-.btn {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: #ffffff;
-    background: #1A1A1A;
-    border: 2px solid #ffffff; /* Białe obramowanie */
-    border-radius: 20px; /* Zaokrąglone obramowanie */
-    transition: transform 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s, border-color 0.3s;
-    position: relative;
-    z-index: 1; /* Przenieś na wierzch */
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-.btn:hover,
-.btn:focus {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    background: #ffffff;
-    color: #1A1A1A;
-    border-color: #ffffff; /* Zmiana koloru obramowania na biały */
-}
-
-.btn:active {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.btn .top-text {
-    font-size: 12px; /* Zmniejszenie rozmiaru czcionki */
-    font-weight: normal; /* Usunięcie pogrubienia */
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradient 3s infinite;
-}
-
-.btn .main-text {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-@keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* Stylizacja specyficzna dla portfolio */
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -314,9 +267,4 @@ body {
 .gallery-item p {
     text-align: center;
     margin-top: 10px;
-}
-
-h1 {
-    text-align: center;
-    margin-bottom: 40px;
 }
