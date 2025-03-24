@@ -229,7 +229,8 @@ body {
 /* Kontener główny */
 .container {
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    align-items: center;
     opacity: 0;
     visibility: hidden;
     transition: opacity 1s ease-in-out, visibility 0s linear 1s;
