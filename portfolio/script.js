@@ -31,3 +31,11 @@ function toggleMenu() {
     const nav = document.querySelector('.nav');
     nav.classList.toggle('open');
 }
+
+/* Dodatkowe skrypty z głównej strony */
+function init() {
+    console.log("Strona portfolio załadowana");
+    // Inne inicjalizacje skryptów
+}
+
+init();
