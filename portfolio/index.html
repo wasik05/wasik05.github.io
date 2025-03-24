@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Paweł Wąsik</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../avatar.png">
+</head>
+<body>
+    <!-- Górna belka -->
+    <header class="header">
+        <div class="header-content">
+            <img src="../avatar.png" alt="Avatar" class="avatar">
+            <span class="name">Paweł Wąsik</span>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="../strona1.html">Strona1</a></li>
+                    <li><a href="../strona2.html">Strona2</a></li>
+                    <li><a href="index.html">Portfolio</a></li>
+                    <li><a href="../index.html">Powrót</a></li>
+                </ul>
+                <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Kontener główny z galerią -->
+    <main class="container">
+        <h1>Moje Portfolio</h1>
+        <div class="gallery" id="gallery">
+            <!-- Elementy galerii będą generowane dynamicznie przez JavaScript -->
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
