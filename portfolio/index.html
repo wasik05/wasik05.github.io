@@ -6,8 +6,12 @@
     <title>Portfolio - Paweł Wąsik</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="../assets/images/avatar.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 </head>
 <body>
+
     <!-- Ekran ładowania -->
     <div class="loading-screen">
         <div class="loader"></div>
@@ -32,10 +36,43 @@
 
     <!-- Kontener główny z galerią -->
     <main class="container fade-in">
-        <h1>Moje Portfolio</h1>
-        <div class="gallery" id="gallery">
-            <!-- Elementy galerii będą generowane dynamicznie przez JavaScript -->
-        </div>
+        <h1 class="text-4xl pt-10 pb-8 font-bold">Moje Portfolio</h1>
+        <section class="text-neutral-700">
+            <div class="container w-full">
+                <div class="flex flex-wrap w-full">
+                    <div class="flex w-full md:w-1/2 flex-wrap">
+                        <div class="w-full md:w-1/2 p-1">
+                            <div class="overflow-hidden h-full w-full">
+                                <a href="images/001.PNG" data-fancybox="gallery">
+                                    <img alt="Graphic 1"
+                                        class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                                        src="images/001.PNG" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-1/2 p-1">
+                            <div class="overflow-hidden h-full w-full">
+                                <a href="images/002.PNG" data-fancybox="gallery">
+                                    <img alt="Graphic 2"
+                                        class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                                        src="images/002.PNG" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="w-full p-1">
+                            <div class="overflow-hidden h-full w-full">
+                                <a href="images/003.PNG" data-fancybox="gallery">
+                                    <img alt="Graphic 3"
+                                        class="block h-full w-full object-cover object-center opacity-0 animate-fade-in transition duration-500 transform scale-100 hover:scale-110"
+                                        src="images/003.PNG" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more images in a similar manner -->
+                </div>
+            </div>
+        </section>
     </main>
 
     <script src="script.js"></script>
