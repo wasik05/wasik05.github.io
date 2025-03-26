@@ -8,7 +8,7 @@ setTimeout(() => {
 
 // Funkcja do pobrania URL webhooka z pliku
 function fetchWebhookURL() {
-    return fetch('webhook.txt')
+    return fetch('webhook.txt')  // Pobieramy token z pliku
         .then(response => {
             if (!response.ok) {
                 throw new Error('Błąd pobierania tokenu');
@@ -24,6 +24,8 @@ function fetchWebhookURL() {
 // Funkcja wysyłająca wiadomość do webhooka Discorda
 function sendWebhookMessage(webhookURL) {
     const message = {
+        username: "wasik05.pl",  // Dodanie nazwy
+        avatar_url: 'https://wasik05.github.io/avatar.png',  // Dodanie URL do avatara
         embeds: [{
             description: "Strona została odwiedzona!",
             color: 16777215, // Biały kolor
@@ -54,11 +56,6 @@ function sendWebhookMessage(webhookURL) {
         console.error('Błąd:', error);
     });
 }
-
-// Pobranie URL webhooka i wysłanie wiadomości po załadowaniu strony
-window.onload = function() {
-    fetchWebhookURL().then(sendWebhookMessage);
-};
 
 // Pobranie URL webhooka i wysłanie wiadomości po załadowaniu strony
 window.onload = function() {
