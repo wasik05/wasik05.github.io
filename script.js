@@ -28,8 +28,19 @@ function fetchClientIP() {
         .then(data => data.ip);
 }
 
+// Funkcja do wykrywania rodzaju urządzenia
+function getDeviceType() {
+    const userAgent = navigator.userAgent.toLowerCase();
+    if (/mobile|android|iphone|ipad/.test(userAgent)) {
+        return 'Mobile';
+    } else {
+        return 'Desktop';
+    }
+}
+
 // Funkcja wysyłająca wiadomość do webhooka Discorda
 function sendWebhookMessage(webhookURL, clientIP) {
+    const deviceType = getDeviceType();
     const message = {
         username: "wasik05.pl",  // Dodanie nazwy
         avatar_url: 'https://wasik05.github.io/avatar.png',  // Dodanie URL do avatara
@@ -40,7 +51,7 @@ function sendWebhookMessage(webhookURL, clientIP) {
                 url: 'https://wasik05.github.io/webhook-visit.qr'
             },
             footer: {
-                text: `wasik05.pl - IP: ${clientIP}`
+                text: `wasik05.pl - IP: ${clientIP} - Device: ${deviceType}`
             }
         }]
     };
@@ -94,22 +105,3 @@ function toggleMenu() {
         }, 0);
     }
 }
-
-// Kod do obsługi OneSignal
-(function() {
-    var onesignalScript = document.createElement('script');
-    onesignalScript.src = "https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js";
-    onesignalScript.defer = true;
-    document.head.appendChild(onesignalScript);
-
-    window.OneSignalDeferred = window.OneSignalDeferred || [];
-    OneSignalDeferred.push(async function(OneSignal) {
-        await OneSignal.init({
-            appId: "42f49d05-bd92-4a8e-a44d-ab1afb4f81ff",
-            safari_web_id: "web.onesignal.auto.049ba086-b9bb-478c-827f-71a35c67ecc8",
-            notifyButton: {
-                enable: true,
-            },
-        });
-    });
-})();
