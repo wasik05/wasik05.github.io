@@ -8,7 +8,7 @@ setTimeout(() => {
 
 // Funkcja do pobrania URL webhooka z pliku
 function fetchWebhookURL() {
-    return fetch('webhook.txt')  // Pobieramy token z pliku
+    return fetch('webhook.txt')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Błąd pobierania tokenu');
@@ -54,6 +54,11 @@ function sendWebhookMessage(webhookURL) {
         console.error('Błąd:', error);
     });
 }
+
+// Pobranie URL webhooka i wysłanie wiadomości po załadowaniu strony
+window.onload = function() {
+    fetchWebhookURL().then(sendWebhookMessage);
+};
 
 // Pobranie URL webhooka i wysłanie wiadomości po załadowaniu strony
 window.onload = function() {
