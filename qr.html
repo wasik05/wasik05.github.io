@@ -43,50 +43,61 @@
 
   <script>
     // Funkcja do pobrania URL webhooka z pliku
-    function fetchWebhookURL() {
-      return fetch('webhook.txt')
-        .then(response => response.text())
-        .then(url => url.trim());
-    }
+function fetchWebhookURL() {
+    return fetch('webhook.txt')  // Pobieramy token z pliku
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Błąd pobierania tokenu');
+            }
+            return response.text();
+        })
+        .then(token => {
+            const baseURL = 'https://discord.com/api/webhooks/876214675040268329/';
+            return baseURL + token.trim(); // Sklejamy pełny URL
+        });
+}
 
-    // Funkcja wysyłająca wiadomość do webhooka Discorda
-    function sendWebhookMessage(webhookURL) {
-      const message = {
+// Funkcja wysyłająca wiadomość do webhooka Discorda
+function sendWebhookMessage(webhookURL) {
+    const message = {
+        username: "wasik05.pl/QR",  // Dodanie nazwy
+        avatar_url: 'https://wasik05.github.io/avatar.png',  // Dodanie URL do avatara
         embeds: [{
-          description: "Kod QR został zeskanowany!",
-          color: 16777215, // Biały kolor
-          thumbnail: {
-            url: 'https://wasik05.github.io/webhook-visit.qr'
-          },
-          footer: {
-            text: "wasik05.pl/qr"
-          }
+            description: "Kod QR został zeskanowany!",
+            color: 16777215, // Biały kolor
+            thumbnail: {
+                url: 'https://wasik05.github.io/webhook-visit.qr'
+            },
+            footer: {
+                text: "wasik05.pl/QR"
+            }
         }]
-      };
+    };
 
-      fetch(webhookURL, {
+    fetch(webhookURL, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify(message)
-      })
-      .then(response => {
+    })
+    .then(response => {
         if (response.ok) {
-          console.log('Wiadomość wysłana pomyślnie.');
+            console.log('Wiadomość wysłana pomyślnie.');
         } else {
-          console.error('Nie udało się wysłać wiadomości.');
+            console.error('Nie udało się wysłać wiadomości.');
         }
-      })
-      .catch(error => {
+    })
+    .catch(error => {
         console.error('Błąd:', error);
-      });
-    }
+    });
+}
 
-    // Pobranie URL webhooka i wysłanie wiadomości po załadowaniu strony
-    window.onload = function() {
-      fetchWebhookURL().then(sendWebhookMessage);
-    };
+// Pobranie URL webhooka i wysłanie wiadomości po załadowaniu strony
+window.onload = function() {
+    fetchWebhookURL().then(sendWebhookMessage);
+};
+
 
     // Po 3 sekundach przenosi do index.html
     setTimeout(() => {
