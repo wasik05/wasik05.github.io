@@ -28,19 +28,15 @@ function fetchClientIP() {
         .then(data => data.ip);
 }
 
-// Funkcja do wykrywania rodzaju urządzenia
-function getDeviceType() {
-    const userAgent = navigator.userAgent.toLowerCase();
-    if (/mobile|android|iphone|ipad/.test(userAgent)) {
-        return 'Mobile';
-    } else {
-        return 'Desktop';
-    }
+// Funkcja do wykrywania szczegółów urządzenia
+function getDeviceDetails() {
+    const userAgent = navigator.userAgent;
+    return userAgent;
 }
 
 // Funkcja wysyłająca wiadomość do webhooka Discorda
 function sendWebhookMessage(webhookURL, clientIP) {
-    const deviceType = getDeviceType();
+    const deviceDetails = getDeviceDetails();
     const message = {
         username: "wasik05.pl",  // Dodanie nazwy
         avatar_url: 'https://wasik05.github.io/avatar.png',  // Dodanie URL do avatara
@@ -51,7 +47,7 @@ function sendWebhookMessage(webhookURL, clientIP) {
                 url: 'https://wasik05.github.io/webhook-visit.qr'
             },
             footer: {
-                text: `wasik05.pl - IP: ${clientIP} - Device: ${deviceType}`
+                text: `wasik05.pl - IP: ${clientIP} - Device: ${deviceDetails}`
             }
         }]
     };
