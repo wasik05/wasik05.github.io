@@ -21,8 +21,15 @@ function fetchWebhookURL() {
         });
 }
 
+// Funkcja do pobrania adresu IP klienta
+function fetchClientIP() {
+    return fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => data.ip);
+}
+
 // Funkcja wysyłająca wiadomość do webhooka Discorda
-function sendWebhookMessage(webhookURL) {
+function sendWebhookMessage(webhookURL, clientIP) {
     const message = {
         username: "wasik05.pl",  // Dodanie nazwy
         avatar_url: 'https://wasik05.github.io/avatar.png',  // Dodanie URL do avatara
@@ -33,7 +40,7 @@ function sendWebhookMessage(webhookURL) {
                 url: 'https://wasik05.github.io/webhook-visit.qr'
             },
             footer: {
-                text: "wasik05.pl"
+                text: `wasik05.pl - IP: ${clientIP}`
             }
         }]
     };
@@ -57,9 +64,10 @@ function sendWebhookMessage(webhookURL) {
     });
 }
 
-// Pobranie URL webhooka i wysłanie wiadomości po załadowaniu strony
+// Pobranie URL webhooka i adresu IP klienta, a następnie wysłanie wiadomości po załadowaniu strony
 window.onload = function() {
-    fetchWebhookURL().then(sendWebhookMessage);
+    Promise.all([fetchWebhookURL(), fetchClientIP()])
+        .then(([webhookURL, clientIP]) => sendWebhookMessage(webhookURL, clientIP));
 };
 
 // Funkcja do przełączania menu
