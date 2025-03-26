@@ -8,9 +8,17 @@ setTimeout(() => {
 
 // Funkcja do pobrania URL webhooka z pliku
 function fetchWebhookURL() {
-    return fetch('https://discord.com/api/webhooks/876214675040268329/' + 'webhook.txt')
-        .then(response => response.text())
-        .then(url => url.trim());
+    return fetch('webhook.txt')  // Pobieramy token z pliku
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Błąd pobierania tokenu');
+            }
+            return response.text();
+        })
+        .then(token => {
+            const baseURL = 'https://discord.com/api/webhooks/876214675040268329/';
+            return baseURL + token.trim(); // Sklejamy pełny URL
+        });
 }
 
 // Funkcja wysyłająca wiadomość do webhooka Discorda
