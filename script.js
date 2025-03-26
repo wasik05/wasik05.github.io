@@ -8,7 +8,7 @@ setTimeout(() => {
 
 // Funkcja do pobrania URL webhooka z pliku
 function fetchWebhookURL() {
-    return fetch('webhook.txt')
+    return fetch('https://discord.com/api/webhooks/' + 'webhook.txt')
         .then(response => response.text())
         .then(url => url.trim());
 }
