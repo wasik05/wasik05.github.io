@@ -16,7 +16,7 @@ function fetchWebhookURL() {
             return response.text();
         })
         .then(token => {
-            const baseURL = 'https://discord.com/api/webhooks/1354806224079687840/';
+            const baseURL = 'https://discord.com/api/webhooks/';
             return baseURL + token.trim(); // Sklejamy pełny URL
         });
 }
@@ -44,7 +44,7 @@ function fetchWebhookURL() {
             return response.text();
         })
         .then(token => {
-            const baseURL = 'https://discord.com/api/webhooks/876214675040268329/';
+            const baseURL = 'https://discord.com/api/webhooks/';
             return baseURL + token.trim(); // Sklejamy pełny URL
         });
 }
