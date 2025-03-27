@@ -16,7 +16,7 @@ function fetchWebhookURL() {
             return response.text();
         })
         .then(token => {
-            const baseURL = 'https://discord.com/api/webhooks/1354806224079687480/';
+            const baseURL = 'https://discord.com/api/webhooks/1354806224079687840/';
             return baseURL + token.trim(); // Sklejamy pełny URL
         });
 }
