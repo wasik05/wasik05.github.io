@@ -1,10 +1,3 @@
-// Dodanie biblioteki CryptoJS
-(function() {
-    var script = document.createElement('script');
-    script.src = "https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js";
-    document.head.appendChild(script);
-})();
-
 // Ukrycie ekranu ładowania po 2 sekundach
 setTimeout(() => {
     document.querySelector('.loading-screen').classList.add('fade-out');
@@ -13,22 +6,18 @@ setTimeout(() => {
     document.querySelector('.header').classList.add('fade-in'); // Dodanie klasy fade-in
 }, 2000);
 
-// Funkcja do pobrania URL webhooka z pliku i odszyfrowania tokena
+// Funkcja do pobrania URL webhooka z pliku
 function fetchWebhookURL() {
-    return fetch('webhook.txt')
+    return fetch('webhook.txt')  // Pobieramy token z pliku
         .then(response => {
             if (!response.ok) {
                 throw new Error('Błąd pobierania tokenu');
             }
             return response.text();
         })
-        .then(encryptedToken => {
-            const secretKey = CryptoJS.enc.Base64.parse('wObKSxwr3RX6EMW3B9rBHCIxWYsTGj7majhEnja3FRx7esP2clEPausP7nANqNHPIzz6tpB7F9eKWk2OXAjQ5JvCKi5rhxJPunYJbnjt8AM='); // Wprowadź tutaj swój klucz szyfrowania w Base64
-            const iv = CryptoJS.enc.Hex.parse('your-128-bit-iv-here'); // Wprowadź tutaj swój Initialization Vector w Hex
-            const bytes = CryptoJS.AES.decrypt(encryptedToken, secretKey, { iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7 });
-            const token = bytes.toString(CryptoJS.enc.Utf8);
+        .then(token => {
             const baseURL = 'https://discord.com/api/webhooks/876214675040268329/';
-            return baseURL + token.trim();
+            return baseURL + token.trim(); // Sklejamy pełny URL
         });
 }
 
